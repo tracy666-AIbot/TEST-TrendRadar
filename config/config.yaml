@@ -561,7 +561,7 @@ ai_translation:
 #   - AI_ANALYSIS_MODEL
 # ===============================================================
 ai_analysis_model:
-  model: ""                         # 留空则从环境变量 AI_ANALYSIS_MODEL 读取
+  model: "openai/Pro/deepseek-ai/DeepSeek-V3.2"                         # 留空则从环境变量 AI_ANALYSIS_MODEL 读取
   api_key: ""                       # 留空则从环境变量 AI_ANALYSIS_API_KEY 读取
   api_base: ""                      # 留空则从环境变量 AI_ANALYSIS_API_BASE 读取
   timeout: 120
@@ -579,7 +579,7 @@ ai_analysis_model:
 #   - AI_FILTER_MODEL
 # ===============================================================
 ai_filter_model:
-  model: ""
+  model: "openai/Pro/MiniMaxAI/MiniMax-M2.5"
   api_key: ""
   api_base: ""
   timeout: 120
@@ -597,7 +597,7 @@ ai_filter_model:
 #   - AI_TRANSLATION_MODEL
 # ===============================================================
 ai_translation_model:
-  model: ""
+  model: "openai/Qwen/Qwen3.5-27B"
   api_key: ""
   api_base: ""
   timeout: 120
