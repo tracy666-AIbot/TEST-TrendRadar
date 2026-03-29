@@ -136,6 +136,26 @@ jobs:
       - name: Run crawler
         if: success()
         env:
+          # 默认 AI 配置
+          AI_MODEL: ${{ secrets.AI_MODEL }}
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          AI_API_BASE: ${{ secrets.AI_API_BASE }}
+          
+          # AI 分析专用配置
+          AI_ANALYSIS_MODEL: ${{ secrets.AI_ANALYSIS_MODEL }}
+          AI_ANALYSIS_API_KEY: ${{ secrets.AI_ANALYSIS_API_KEY }}
+          AI_ANALYSIS_API_BASE: ${{ secrets.AI_ANALYSIS_API_BASE }}
+          
+          # AI 筛选专用配置
+          AI_FILTER_MODEL: ${{ secrets.AI_FILTER_MODEL }}
+          AI_FILTER_API_KEY: ${{ secrets.AI_FILTER_API_KEY }}
+          AI_FILTER_API_BASE: ${{ secrets.AI_FILTER_API_BASE }}
+          
+          # AI 翻译专用配置
+          AI_TRANSLATION_MODEL: ${{ secrets.AI_TRANSLATION_MODEL }}
+          AI_TRANSLATION_API_KEY: ${{ secrets.AI_TRANSLATION_API_KEY }}
+          AI_TRANSLATION_API_BASE: ${{ secrets.AI_TRANSLATION_API_BASE }}
+          
           FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
