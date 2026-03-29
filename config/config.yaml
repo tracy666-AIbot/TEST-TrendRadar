@@ -505,7 +505,7 @@ ai_filter_model:
 #   - AI_TRANSLATION_MODEL
 # ===============================================================
 ai_translation_model:
-  model: "openai/Qwen/Qwen3.5-397B-A17B"
+  model: "openai/Qwen/Qwen3-8B"
   api_key: ""
   api_base: ""
   timeout: 120
