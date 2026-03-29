@@ -49,10 +49,27 @@ class AIFilter:
         self.get_time_func = get_time_func
         self.debug = debug
 
+        # 打印 AI 筛选配置信息
+        model = ai_config.get("MODEL", "")
+        api_key = ai_config.get("API_KEY", "")
+        api_base = ai_config.get("API_BASE", "")
+        masked_key = f"{api_key[:5]}******" if len(api_key) >= 5 else "******"
+        model_display = model.replace("/", "/\u200b") if model else "unknown"
+
+        print(f"[AI 筛选] 模型：{model_display}")
+        print(f"[AI 筛选] Key : {masked_key}")
+
+        if api_base:
+            print(f"[AI 筛选] 接口：存在自定义 API 端点")
+
+        timeout = ai_config.get("TIMEOUT", 120)
+        max_tokens = ai_config.get("MAX_TOKENS", 5000)
+        print(f"[AI 筛选] 参数：timeout={timeout}, max_tokens={max_tokens}")
+
         # 加载提示词模板
         self.classify_system, self.classify_user = load_prompt_template(
             filter_config.get("PROMPT_FILE", "ai_filter_prompt.txt"),
-            config_subdir="ai_filter", label="AI筛选",
+            config_subdir="ai_filter", label="AI 筛选",
         )
         self.extract_system, self.extract_user = load_prompt_template(
             filter_config.get("EXTRACT_PROMPT_FILE", "ai_filter_extract_prompt.txt"),
