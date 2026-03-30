@@ -279,7 +279,7 @@ display:
   # 两者共享此处的平台/RSS 配置，但开关互相独立（可只开 AI 分析、不推送展示）
   standalone:
     platforms: ["bilibili-hot-search","douyin"] # 热榜平台 ID 列表（如 ["zhihu", "weibo"]）
-    rss_feeds: ["hacker-news","ruanyifeng","yahoo-finance"] # RSS 源 ID 列表（如 ["hacker-news"]）
+    rss_feeds: ["ruanyifeng"] # RSS 源 ID 列表（如 ["hacker-news"]）
     max_items: 5                     # 每个源最多展示条数（0=不限制）
 
 
